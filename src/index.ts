@@ -19,4 +19,4 @@ app.listen(PORT, "localhost", () => {
   console.log(`🚀🏁 Server ready at ${url}`);
 });
 
-module.exports = app;
+export default app;
