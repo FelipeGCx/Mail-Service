@@ -8,8 +8,9 @@ router.get("/email", (_req, res) => {
   res.send(service.getUserEmail());
 });
 // route to send email from portfolio contact
-router.post("/send", (req, res) => {
+router.post("/send", async (req, res) => {
   const content = req.body;
-  res.send(service.sendMessage(content));
+  const result = await service.sendMessage(content);
+  res.send(result);
 });
 export default router;

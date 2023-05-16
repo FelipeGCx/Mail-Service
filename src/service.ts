@@ -18,8 +18,7 @@ export const getUserEmail = (): string | undefined => {
 };
 
 export const sendMessage = async (content: Content): Promise<string> => {
-  let res: string = "";
-  await transporter
+  return await transporter
     .sendMail({
       from: process.env.USER_EMAIL,
       to: process.env.RECEPTOR_EMAIL,
@@ -29,10 +28,9 @@ export const sendMessage = async (content: Content): Promise<string> => {
       // headers: { "x-myheader": "test header" },
     })
     .then((_res: any) => {
-      res = "Message sended successfully";
+      return "Message sended successfully";
     })
     .catch((_err: any) => {
-      res = "Somenthing fail";
+      return "Somenthing fail";
     });
-  return res;
 };
