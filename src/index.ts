@@ -18,3 +18,5 @@ app.listen(PORT, "localhost", () => {
   const url = `http://localhost:${PORT}/`;
   console.log(`🚀🏁 Server ready at ${url}`);
 });
+
+module.exports = app;
