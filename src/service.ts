@@ -24,9 +24,8 @@ export const sendMessage = async (content: Content): Promise<string> => {
       from: process.env.USER_EMAIL,
       to: process.env.RECEPTOR_EMAIL,
       // cc: content.email,
-      subject: "Contact to Services",
-      text: content.message,
-      // html: "<strong>Hello world?</strong>",
+      subject: `${content.name} want contact with you to your services`,
+      html: `<h1>Message Sended by: ${content.name}</h1><h2>With Email: ${content.email}</h2><h2>Message: ${content.message}</h2>`,
       // headers: { "x-myheader": "test header" },
     })
     .then((_res: any) => {
